@@ -31,12 +31,12 @@ app.use(cors({
 app.use(cookieParser());
 
  
-app.use('/auth',authRouter) 
-app.use('/user',userRouter)  
-app.use('/connection',conRouter)
-app.use('/blog',blogRouter)
-app.use('/comment',commentRouter)   
-app.use('/subscriber',subscriberRouter)   
+app.use('/api/auth',authRouter) 
+app.use('/api/user',userRouter)  
+app.use('/api/connection',conRouter)
+app.use('/api/blog',blogRouter)
+app.use('/api/comment',commentRouter)   
+app.use('/api/subscriber',subscriberRouter)   
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/frontend/dist")));
