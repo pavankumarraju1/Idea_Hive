@@ -13,7 +13,7 @@ import ProfileDetails from "./pages/ProfileDetails"
 import LogoutPage from "./pages/LogoutPage";
 import ProfileUpdateForm from "./pages/ProfileUpdateForm";
 import Body from "./pages/Body";
-import CreateBlog from "./pages/createBlog"
+import CreateBlog from "./pages/CreateBlog"
 import AllBlogsShow from "./pages/AllBlogsShow"
 import IndividualBlogShow from "./pages/IndividualBlogShow"
 import MySubscriptions from "./pages/MySubscriptions"
