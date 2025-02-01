@@ -8,7 +8,12 @@ const commentSchema = new Schema({
     userId:{
         type:mongoose.Schema.Types.ObjectId,
         required:true,
-        ref:"user"
+        ref:'user'
+    },
+    blogId:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:'blog'
     }
 })
 

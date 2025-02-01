@@ -1,15 +1,16 @@
-
+import {StepForward} from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Card = ({data,load}) => {
     const len = data?.length || 6
   return (
-      <div className="flex justify-around flex-wrap gap-16 p-16">
+      <div className="flex justify-around flex-wrap gap-16 p-5">
           {
               !load ?
                   (data?.map((value, index) => {
                       return (
-                          <div key={index} className="card bg-base-100 image-full w-80 h-80 shadow-xl">
-                              <figure>
+                          <div key={index} className="card bg-base-100 image-full w-80 h-80  shadow-xl">
+                              <figure className=''>
                                   <img
                                       src={value.photourl}
                                       alt="image" />
@@ -18,7 +19,7 @@ const Card = ({data,load}) => {
                                   <h2 className="card-title text-3xl text-white">{value.name}</h2>
                                   <p className="text-xl text-white">{value.about}</p>
                                   <div className="card-actions justify-end">
-                                      <button className="btn btn-neutral text-base hover:text-black hover:bg-[#ffbe00] ">subscribe</button>
+                                      <Link to={`/userDetails/${value._id}`} ><button className="btn btn-neutral text-base hover:text-black hover:bg-[#ffbe00] "><StepForward /></button></Link>
                                   </div>
                               </div>
                           </div>
@@ -30,7 +31,7 @@ const Card = ({data,load}) => {
                   ( 
                         Array.from({length:len}).map((_,idx)=>{
                             return(
-                                <div key={idx} className="flex justify-around flex-wrap gap-10 p-10">
+                                <div key={idx} className="flex justify-around flex-wrap gap-10">
                                     <div className="card bg-gray-800 animate-pulse w-80 h-80 shadow-xl relative rounded-lg">
                                     <div className="w-full h-full bg-gray-300 rounded-lg"></div> {/* Shimmer for the image */}
 

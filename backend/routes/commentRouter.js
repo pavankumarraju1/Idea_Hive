@@ -5,6 +5,6 @@ import { addCommentController } from "../controllers/commentController.js";
 const commentRouter = express.Router();
 
 
-commentRouter.post('/addcomment',userAuth,addCommentController)
+commentRouter.post('/addcomment/:blogId',userAuth,addCommentController)
 
 export default commentRouter

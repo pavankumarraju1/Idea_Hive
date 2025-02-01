@@ -1,6 +1,6 @@
 import cloudinary from "../utils/cloudinary.js";
 import userModel from "../models/userModel.js";
-
+const safeDetails = "-email -password"
 
 const getProfileController = async (req, res) => {
     try {
@@ -66,8 +66,22 @@ const updateProfileController = async (req, res) => {
     } 
 }
 
+const getUserDataById = async(req,res)=>{
+    let id = req.params.id
+    try {
+        const data = await userModel.findById(id).select(safeDetails);
+        if(!data){
+            throw new Error("No user found");    
+        }
+        res.status(200).json(data);
+    } catch (error) {
+        res.status(400).json({message:error.message})
+    }
+}
+
 export{
     getProfileController,
     getAllProfilesData,
-    updateProfileController
+    updateProfileController,
+    getUserDataById
 }

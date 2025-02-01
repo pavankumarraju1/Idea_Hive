@@ -16,12 +16,14 @@ import Body from "./pages/Body";
 import CreateBlog from "./pages/createBlog"
 import AllBlogsShow from "./pages/AllBlogsShow"
 import IndividualBlogShow from "./pages/IndividualBlogShow"
+import MySubscriptions from "./pages/MySubscriptions"
+import UserDeatils from "./pages/UserDeatils"
 
 
 function App() {
  
   return (
-    <div className="min-h-screen bg-sky-950 text-white">
+    <div className="min-h-screen w-full bg-sky-950 text-white">
     <BrowserRouter basename="/">
         <Routes>
           <Route path="/" element={<Body />}>
@@ -35,6 +37,8 @@ function App() {
             <Route path="/createblog" element={<CreateBlog />}></Route>
             <Route path="/blogs" element={<AllBlogsShow />}></Route>
             <Route path="/blog/:id" element={<IndividualBlogShow />}></Route>
+            <Route path="/userDetails/:id" element={<UserDeatils />}></Route>
+            <Route path="/mysubs" element={<MySubscriptions />}></Route>
           </Route>
         </Routes>
     </BrowserRouter>
@@ -44,4 +48,4 @@ function App() {
   )
 }
 
-export default App
+export default App 

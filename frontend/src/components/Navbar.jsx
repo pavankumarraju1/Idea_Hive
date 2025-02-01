@@ -5,8 +5,8 @@ import { Link } from "react-router-dom"
 const Navbar = () => {
     const storeData = useSelector((store) => store.user)
   return (
-      <div className="pl-4 pr-4 navbar bg-blue-900 text-white flex justify-center">
-         <div className="navbar-start">
+      <div className="navbar bg-blue-900 text-white flex justify-center">
+         <div className="navbar-start pl-3">
               {storeData && <div className="dropdown">
                   <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                       <svg
@@ -26,6 +26,7 @@ const Navbar = () => {
                       tabIndex={0}
                       className="menu menu-sm dropdown-content rounded-box z-[100] mt-3 w-52 p-2 shadow bg-slate-600 text-white ml-4">
                       <Link to='/profile'><li className="mb-2">Profile</li></Link>
+                      <Link to='/mysubs'><li className="mb-2">My Subscriptions</li></Link>
                       <Link to='/logout'><li className="mb-2">logout</li></Link>
                   </ul>
               </div>
@@ -38,7 +39,8 @@ const Navbar = () => {
               <Link to='/land'><p className="btn btn-ghost text-xl">Idea Hive</p></Link>
           </div>
           <div className="navbar-end">
-              {storeData && <div className="flex flex-wrap gap-2 sm:justify-end justify-center items-center break-words"> <p className="whitespace-normal">welcome,{storeData?.name}</p>
+              {storeData && <div className="flex flex-wrap gap-6 justify-center items-center"> 
+                <p className="whitespace-normal">welcome,{storeData?.name}</p>
                   <Link to='/profile' className="btn btn-ghost btn-circle">
                       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                           <div className="w-10 rounded-full">
