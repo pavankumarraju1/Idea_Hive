@@ -15,7 +15,7 @@ const commentSchema = new Schema({
         required:true,
         ref:'blog'
     }
-})
+},{timestamps:true})
 
 const commentModel = new model("comment",commentSchema)
 

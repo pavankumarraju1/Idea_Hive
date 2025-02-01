@@ -25,6 +25,9 @@ const AllBlogsShow = () => {
                 }
             })
         }
+        finally{
+            setLoading(false)
+        }
     }
 
     useEffect(()=>{

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom"
 const BlogCard = ({ data, load }) => {
     const len = data?.length || 6
     const nav = useNavigate();
-    console.log(data)
 
     if (data?.length == 0) {
         return (
@@ -13,7 +12,7 @@ const BlogCard = ({ data, load }) => {
     }
     return (
         <div className="flex justify-around flex-wrap gap-16 p-16">
-            {load ? (
+            {!load ? (
                 data?.map((value, index) => (
                     <div key={index} className="card bg-base-100 image-full w-80 h-80 shadow-xl">
                         <figure>

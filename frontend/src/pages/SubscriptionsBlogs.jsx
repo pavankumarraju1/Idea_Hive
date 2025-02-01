@@ -14,9 +14,9 @@ const SubscriptionsBlogs = () => {
             setLoading(true)
             const data = await axiosInstance.get(`/subscriber/getBlog/${id}`)
             setBlogs(data.data)
+            setLoading(false)
         } catch (error) {
             setLoading(false)
-            console.log(error);
             toast.error(error.response.data.message, {
                 style: {
                     borderRadius: '10px',

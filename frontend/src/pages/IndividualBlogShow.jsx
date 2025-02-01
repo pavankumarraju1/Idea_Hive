@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom"
 import toast from "react-hot-toast";
 import axiosInstance from "../lib/axios";
 import { useEffect, useState } from "react";
-import { MessageSquareDiff } from "lucide-react";
+import Commentspage from "./Commentspage";
+
 
 const IndividualBlogShow = () => {
   const { id } = useParams();
@@ -66,16 +67,7 @@ const IndividualBlogShow = () => {
           </div>
           {/* comments */}
           <div>
-            <div className="flex items-end gap-10">
-              <h1 className="mt-10 text-4xl">comments:</h1>
-              <label className="form-control w-full max-w-xs">
-                <input type="text" placeholder="your comments here..." className="input input-bordered w-full max-w-xs text-black" />
-              </label>
-              <button><p>Add:</p><MessageSquareDiff /></button>
-            </div>
-            <div>
-
-            </div>
+            <Commentspage />
           </div>
 
         </div>
