@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom"
 
 const SubscriotionsCard = ({data,load}) => {
     const len = data?.length || 6
-    console.log(data);
+    //console.log(data);
+    const nav = useNavigate()
   return (
       <div className="flex justify-around flex-wrap gap-16 p-16">
           {!load ? (
@@ -15,13 +17,13 @@ const SubscriotionsCard = ({data,load}) => {
                               <h2 className="card-title text-3xl text-white">{value.subscriberId.name}</h2>
                               <p className="text-xl text-white">{value.subscriberId.about}</p>
                               <div className="card-actions justify-end">
-                                  <button className="btn btn-neutral bg-black  text-white hover:text-black hover:bg-[#ffbe00]">My Ideas</button>
+                                  <button className="btn btn-neutral bg-black  text-white hover:text-black hover:bg-[#ffbe00]" onClick={() => nav(`/mysubscriptions/allBlogs/${value.subscriberId._id}`)}>My Ideas</button>
                               </div>
                           </div>
                       </div>
                   ))
               ) : (
-                  <p className="text-white text-center text-3xl mt-40">you have not subscribed to any channel</p>
+                  <p className="text-white text-center text-3xl mt-20">you have not subscribed to any channel</p>
               )
           ) : (
               Array.from({ length: len }).map((_, idx) => (

@@ -35,7 +35,7 @@ const UserDeatils = () => {
         }
     }
 
-    const handleClick = async () => {
+    const subscribtionData = async()=>{
         setsubload(true)
         try {
             const data = await axiosInstance.post(`subscriber/addSubscriber/${id}`, {
@@ -48,7 +48,6 @@ const UserDeatils = () => {
             setsubload(false)
         } catch (error) {
             setsubload(false)
-            console.log(error);
             toast.error(error.response.data.message, {
                 style: {
                     borderRadius: '10px',
@@ -61,10 +60,17 @@ const UserDeatils = () => {
             setsubload(false)
         }
     }
+    const handleClick = () => {
+       subscribtionData()
+    }
     useEffect(() => {
         getuserDetails()
+        //subscribtionData()
     }, [])
 
+    // useEffect(()=>{
+    //     subscribtionData()
+    // },[subData])
     return (
         <>
             {loading ? <span className="loading loading-spinner text-warning w-1/12 flex justify-center mx-auto my-52"></span>
@@ -92,16 +98,21 @@ const UserDeatils = () => {
                     {/* Subscribe Section */}
                     <div className="mt-10 flex flex-col justify-center items-center sm:flex-row gap-5 px-3 text-center sm:text-left mb-10">
                         <p className="text-white">Subscribe me to explore my ideas:</p>
-                        {subData == "" ? <button className="flex gap-3 items-center justify-center bg-[#ffbe00] px-3 py-2 rounded text-red-700" onClick={handleClick}>
-                            {subload ? <span className="loading loading-ring loading-md"></span> :
-                                <>  <span>Subscribe</span>
-                                    <MessageSquareHeart /></>
-                            }
-                        </button> : <span><p>subscribed</p><Check /></span> }
+                        {subData == "subscribed" || subData === "already subscribed" ? <span className="flex gap-3 bg-[#ffbe00] rounded text-black pl-2 pr-2"><p>subscribed</p><Check /></span>  :
+
+                            <button className="flex gap-3 items-center justify-center bg-[#ffbe00] px-3 py-2 rounded text-red-700" onClick={handleClick}>
+                                {subload ? <span className="loading loading-ring loading-md"></span> :
+                                    <>  <span>Subscribe</span>
+                                        <MessageSquareHeart /></>
+                                }
+                            </button>
+                         } 
                     </div>
+                    <div><p className="text-xl">|||chat feature yet to be done|||</p></div>
                 </div>}
         </>
     )
 }
+
 
 export default UserDeatils

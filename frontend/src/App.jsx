@@ -18,6 +18,7 @@ import AllBlogsShow from "./pages/AllBlogsShow"
 import IndividualBlogShow from "./pages/IndividualBlogShow"
 import MySubscriptions from "./pages/MySubscriptions"
 import UserDeatils from "./pages/UserDeatils"
+import SubscriptionsBlogs from "./pages/SubscriptionsBlogs"
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
             <Route path="/blog/:id" element={<IndividualBlogShow />}></Route>
             <Route path="/userDetails/:id" element={<UserDeatils />}></Route>
             <Route path="/mysubs" element={<MySubscriptions />}></Route>
+            <Route path="/mysubscriptions/allBlogs/:id" element={<SubscriptionsBlogs />}></Route>
           </Route>
         </Routes>
     </BrowserRouter>

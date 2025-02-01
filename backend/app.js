@@ -35,7 +35,7 @@ app.use('/connection',conRouter)
 app.use('/blog',blogRouter)
 app.use('/comment',commentRouter)   
 app.use('/subscriber',subscriberRouter)         
-
+ 
  
 connect().then(()=>{ 
     console.log("db success");
