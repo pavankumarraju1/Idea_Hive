@@ -53,7 +53,7 @@ const Loginpage = () => {
             
         } catch (error) {
             setLoading(false)
-            //console.log(error);
+            console.log(error);
             toast(error.response.data.message || error.message,{
                 style: {
                     borderRadius: '10px',

@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import cookieParser from 'cookie-parser';
+import path from "path";
 
 import connect from './utils/connection.js';
 import authRouter from './routes/authRoutes.js';
@@ -17,6 +18,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 
+const __dirname = path.resolve();
 
 app.use(express.json({ 
     limit: '50mb'
@@ -34,7 +36,15 @@ app.use('/user',userRouter)
 app.use('/connection',conRouter)
 app.use('/blog',blogRouter)
 app.use('/comment',commentRouter)   
-app.use('/subscriber',subscriberRouter)         
+app.use('/subscriber',subscriberRouter)   
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+    });
+}
  
  
 connect().then(()=>{ 
