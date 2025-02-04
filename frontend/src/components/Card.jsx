@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Card = ({data,load}) => {
     const len = data?.length || 6
   return (
-      <div className="flex justify-around flex-wrap gap-16 p-5">
+      <div className="flex justify-around flex-wrap gap-20 mt-5 p-5">
           {
               !load ?
                   (data?.map((value, index) => {

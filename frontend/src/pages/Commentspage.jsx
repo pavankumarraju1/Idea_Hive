@@ -120,7 +120,7 @@ const Commentspage = () => {
                         type="text"
                         value={comment}
                         placeholder="Your comments here..."
-                        className="input input-bordered w-full max-w-xs text-black"
+                        className="input input-bordered w-full max-w-xs text-black placeholder-gray-500 bg-white"
                         onChange={(e) => setComment(e.target.value)}
                     />
                 </label>

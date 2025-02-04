@@ -89,21 +89,21 @@ const CreateBlog = () => {
                         <div className="label">
                             <span className="text-white text-xl label-text">Title:</span>
                         </div>
-                        <input type="text" name="title" value={data.title} placeholder="title here..." className="input input-bordered text-lg w-full max-w-xs text-black" required 
+                        <input type="text" name="title" value={data.title} placeholder="title here..." className="input input-bordered text-lg w-full max-w-xs bg-white text-black placeholder-gray-500" required 
                         onChange={(e)=>handleChange(e)}/>
                     </label>
                     <label className="form-control w-full max-w-xs">
                         <div className="label">
                             <span className="text-white text-xl label-text">description:</span>
                         </div>
-                        <input type="text" name="description" value={data.description} placeholder="description here..." className="input input-bordered w-full text-lg max-w-xs text-black" required onChange={handleChange} />
+                        <input type="text" name="description" value={data.description} placeholder="description here..." className="input input-bordered text-lg w-full max-w-xs bg-white text-black placeholder-gray-500" required onChange={handleChange} />
                     </label>
                     <label className="form-control w-full max-w-xs">
                         <div className="label">
                             <span className="text-white text-xl label-text">image:</span>
                             <span onClick={handleUpload}><button className="bg-[#ffbe00] text-black rounded pr-2 pl-2">{!upload ? "upload from computer" : "paste url" }</button></span>
                         </div>
-                        <input type={upload? "file" : "text"} name="image" placeholder="url" className="input input-bordered w-full text-lg max-w-xs text-black" required onChange={(e)=>upload ? handleImage(e) : setImageData(e.target.value)} />
+                        <input type={upload ? "file" : "text"} name="image" placeholder="url" className="input input-bordered text-lg w-full max-w-xs bg-white text-black placeholder-gray-500" required onChange={(e)=>upload ? handleImage(e) : setImageData(e.target.value)} />
                     </label>
                 </div>
 
@@ -115,7 +115,7 @@ const CreateBlog = () => {
                         <textarea
                             name="content"
                             value={data.content}
-                            className="textarea textarea-info text-base w-full text-black h-60"
+                            className="textarea textarea-info text-base w-full text-black h-60 placeholder-gray-500 bg-white"
                             placeholder="Write your blog content here..." required onChange={handleChange}></textarea>
                     </label>
                 </div>

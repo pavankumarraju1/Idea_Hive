@@ -16,7 +16,7 @@ const Body = () => {
         try {
             const res = await axiosInstance.get("/user/profile");
             dispatch(addUser(res.data));
-            nav('/land')
+            //nav('/land')
         } catch (error) {
             if (error.response?.status === 401) {
                 if (location.pathname !== "/signup") {

@@ -137,7 +137,7 @@ const ProfileUpdateForm = ({ userId, visible, setVisible, formData }) => {
                             name="name"
                             value={data.name}
                             placeholder="Type here"
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full max-w-xs placeholder-gray-500 bg-white"
                             onChange={handleChange}
                         />
                     </label>
@@ -151,7 +151,7 @@ const ProfileUpdateForm = ({ userId, visible, setVisible, formData }) => {
                             name="age"
                             value={data.age}
                             placeholder="Type here"
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full max-w-xs placeholder-gray-500 bg-white"
                             onChange={handleChange}
                         />
                     </label>
@@ -165,7 +165,7 @@ const ProfileUpdateForm = ({ userId, visible, setVisible, formData }) => {
                             name="about"
                             value={data.about}
                             placeholder="Type here"
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full max-w-xs placeholder-gray-500 bg-white"
                             onChange={handleChange}
                         />
                     </label>
@@ -177,14 +177,14 @@ const ProfileUpdateForm = ({ userId, visible, setVisible, formData }) => {
                         <input
                             type="file"
                             name="image"
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full max-w-xs placeholder-gray-500 bg-white"
                             onChange={handleImage}
                         />
                     </label>
 
                     <label className="form-control w-full max-w-xs mt-3">
                         <select
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full max-w-xs placeholder-gray-500 bg-white"
                             name="gender"
                             value={data.gender}
                             onChange={handleChange}
