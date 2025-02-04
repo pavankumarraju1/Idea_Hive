@@ -24,12 +24,13 @@ const LandingPage = () => {
                 }
             })
             dispatch(addAllUsers(result.data))
-            //console.log(result.data);
+            //console.log(result);
             setData(result.data)
             setLoading(false)
             
         } catch (error) {
             setLoading(false)
+            console.log(error)
             nav('/login')
             toast(error.response.data.message || error.message, {
                 style: {

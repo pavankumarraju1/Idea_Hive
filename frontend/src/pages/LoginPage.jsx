@@ -53,7 +53,7 @@ const Loginpage = () => {
             
         } catch (error) {
             setLoading(false)
-            console.log(error);
+            //console.log(error);
             toast(error.response.data.message || error.message,{
                 style: {
                     borderRadius: '10px',
@@ -72,7 +72,7 @@ const Loginpage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
             >
-                <h2 className='mt-6 text-center text-3xl font-extrabold text-cyan-800'>login to account</h2>
+                <h2 className='mt-6 text-center text-3xl font-extrabold text-cyan-500'>login to account</h2>
             </motion.div>
 
             <motion.div

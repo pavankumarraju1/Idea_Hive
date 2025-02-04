@@ -16,11 +16,13 @@ const Body = () => {
         try {
             const res = await axiosInstance.get("/user/profile");
             dispatch(addUser(res.data));
-            //nav('/land')
+            nav('/land')
         } catch (error) {
-            if (error.status == 401) {
-                nav("/login")
-            }else{
+            if (error.response?.status === 401) {
+                if (location.pathname !== "/signup") {
+                    nav("/login");
+                }
+            } else{
                 nav('/home')
             }
             // toast.error(error.response.data.message, {

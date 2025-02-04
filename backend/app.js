@@ -36,7 +36,7 @@ app.use('/api/user',userRouter)
 app.use('/api/connection',conRouter)
 app.use('/api/blog',blogRouter)
 app.use('/api/comment',commentRouter)   
-app.use('/api/subscriber',subscriberRouter)   
+app.use('/api/subscriber',subscriberRouter)    
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/frontend/dist")));

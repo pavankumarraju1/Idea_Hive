@@ -19,7 +19,7 @@ import IndividualBlogShow from "./pages/IndividualBlogShow"
 import MySubscriptions from "./pages/MySubscriptions"
 import UserDeatils from "./pages/UserDeatils"
 import SubscriptionsBlogs from "./pages/SubscriptionsBlogs"
-
+ 
 
 function App() {
  
