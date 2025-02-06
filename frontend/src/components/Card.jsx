@@ -31,7 +31,7 @@ const Card = ({data,load}) => {
                   ( 
                         Array.from({length:len}).map((_,idx)=>{
                             return(
-                                <div key={idx} className="flex justify-around flex-wrap gap-10">
+                                <div key={idx} className="flex justify-around flex-wrap gap-10 p-5">
                                     <div className="card bg-gray-800 animate-pulse w-80 h-80 shadow-xl relative rounded-lg">
                                     <div className="w-full h-full bg-gray-300 rounded-lg"></div> {/* Shimmer for the image */}
 

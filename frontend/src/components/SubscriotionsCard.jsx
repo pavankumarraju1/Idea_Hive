@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-const SubscriotionsCard = ({data,load}) => {
+const SubscriotionsCard = ({data,load,handler}) => {
     const len = data?.length || 6
     //console.log(data);
     const nav = useNavigate()
@@ -16,14 +16,16 @@ const SubscriotionsCard = ({data,load}) => {
                           <div className="card-body">
                               <h2 className="card-title text-3xl text-white">{value.subscriberId.name}</h2>
                               <p className="text-xl text-white">{value.subscriberId.about}</p>
-                              <div className="card-actions justify-end">
+                              <div className="card-actions justify-end gap-5">
+                                  <button className="btn btn-neutral bg-black  text-white hover:text-black hover:bg-[#ff0033]" onClick={()=>handler(value.subscriberId._id)}>Unsubscribe</button>
                                   <button className="btn btn-neutral bg-black  text-white hover:text-black hover:bg-[#ffbe00]" onClick={() => nav(`/mysubscriptions/allBlogs/${value.subscriberId._id}`)}>My Ideas</button>
+                                  
                               </div>
                           </div>
                       </div>
                   ))
               ) : (
-                  <p className="text-white text-center text-3xl mt-20">you have not subscribed to any channel</p>
+                  <p className="text-white text-center text-3xl mt-20">you have not subscribed to any profile</p>
               )
           ) : (
               Array.from({ length: len }).map((_, idx) => (

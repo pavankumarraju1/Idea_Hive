@@ -38,9 +38,9 @@ const Navbar = () => {
           <div className="navbar-center">
               <Link to='/land'><p className="btn btn-ghost text-xl">Idea Hive</p></Link>
           </div>
-          <div className="navbar-end">
+          <div className="navbar-end mr-4">
               {storeData && <div className="flex flex-wrap gap-6 justify-center items-center"> 
-                <p className="whitespace-normal">welcome,{storeData?.name}</p>
+                <p className="whitespace-normal">welcome, {storeData?.name}</p>
                   <Link to='/profile' className="btn btn-ghost btn-circle">
                       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                           <div className="w-10 rounded-full">

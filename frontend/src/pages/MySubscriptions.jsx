@@ -30,9 +30,33 @@ const MySubscriptions = () => {
     getData()
   },[])
 
+  const unsubscribeHandler=async(id)=>{
+    try {
+      const data = await axiosInstance.delete(`subscriber/unsubscribe/${id}`)
+      //console.log(data);
+      setSubscriptions((prevVal) => prevVal.filter((val) => val.subscriberId._id != id))
+      toast.success(`unsubscribed ${data.data.subscriberId.name}`, {
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        }
+      })
+    } catch (error) {
+      console.log(error);
+      toast(error.response.data.message || error.message, {
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        }
+      })
+    }
+  }
+  console.log(subscriptions);
   return (
     <div>
-      <SubscriotionsCard data={subscriptions} load={loading}/>
+      <SubscriotionsCard data={subscriptions} load={loading} handler={unsubscribeHandler}/>
     </div>
   )
 }

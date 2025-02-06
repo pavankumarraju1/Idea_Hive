@@ -80,8 +80,34 @@ const getSubscriberBlog = async(req,res)=>{
     }
 }
 
+const unsunscribeControlelr = async(req,res)=>{
+    try {
+        const subId = req.params.id;
+        const userId = req.user._id
+        const subscriberId = new mongoose.Types.ObjectId(subId)
+        if(!subId){
+            throw new Error("Unsubscribe not possible")
+        }
+        const subData = await userModel.findById({_id:subId})
+        if(!subData){
+            throw new Error("User not exists")
+        }
+        if(userId.toString() == subId){
+            throw new Error("Cant unsubscribe yourself")
+        }
+        const unsubscribed = await subscriberModel.findOneAndDelete({userId,subscriberId}).populate("subscriberId","name")
+        if(!unsubscribed){
+            throw new Error("Unsubscribe not possible")
+        }
+        res.status(200).json(unsubscribed)
+    } catch (error) {
+        res.status(400).json({message:error.message})
+    }
+}
+
 export{ 
     addSubscriber,
     getSubsribers,
-    getSubscriberBlog
+    getSubscriberBlog,
+    unsunscribeControlelr
 }

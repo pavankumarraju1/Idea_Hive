@@ -7,7 +7,7 @@ const BlogCard = ({ data, load }) => {
 
     if (data?.length == 0) {
         return (
-            <p className="text-white text-center text-3xl mt-16">No blogs available,try to make one</p>
+            <p className="text-white text-center text-3xl mt-32">No blogs available</p>
         )
     }
     return (
