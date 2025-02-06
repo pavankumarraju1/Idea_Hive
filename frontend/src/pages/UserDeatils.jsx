@@ -65,12 +65,8 @@ const UserDeatils = () => {
     }
     useEffect(() => {
         getuserDetails()
-        //subscribtionData()
     }, [])
 
-    // useEffect(()=>{
-    //     subscribtionData()
-    // },[subData])
     return (
         <>
             {loading ? <span className="loading loading-spinner text-warning w-1/12 flex justify-center mx-auto my-52"></span>

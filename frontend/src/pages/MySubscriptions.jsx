@@ -53,7 +53,7 @@ const MySubscriptions = () => {
       })
     }
   }
-  console.log(subscriptions);
+  //console.log(subscriptions);
   return (
     <div>
       <SubscriotionsCard data={subscriptions} load={loading} handler={unsubscribeHandler}/>

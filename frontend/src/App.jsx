@@ -19,6 +19,8 @@ import IndividualBlogShow from "./pages/IndividualBlogShow"
 import MySubscriptions from "./pages/MySubscriptions"
 import UserDeatils from "./pages/UserDeatils"
 import SubscriptionsBlogs from "./pages/SubscriptionsBlogs"
+import ErrorPage from "./pages/ErrorPage"
+
  
 
 function App() {
@@ -41,6 +43,7 @@ function App() {
             <Route path="/userDetails/:id" element={<UserDeatils />}></Route>
             <Route path="/mysubs" element={<MySubscriptions />}></Route>
             <Route path="/mysubscriptions/allBlogs/:id" element={<SubscriptionsBlogs />}></Route>
+            <Route path="*" element={<ErrorPage />} />
           </Route>
         </Routes>
     </BrowserRouter>
